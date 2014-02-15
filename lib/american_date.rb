@@ -4,7 +4,7 @@ if RUBY_VERSION >= '1.9'
   # Modify parsing methods to handle american date format correctly.
   class << Date
     # American date format detected by the library.
-    AMERICAN_DATE_RE = eval('%r_(?<!\d)(\d{1,2})/(\d{1,2})/(\d{4}|\d{2})(?!\d)_').freeze
+    AMERICAN_DATE_RE = eval('%r_(?<!\d)(\d{1,2})-(\d{1,2})-(\d{4}|\d{2})(?!\d)_').freeze
     # Negative lookbehinds, which are not supported in Ruby 1.8
     # so by using eval, we prevent an error when this file is first parsed
     # since the regexp itself will only be parsed at runtime if the RUBY_VERSION condition is met.
